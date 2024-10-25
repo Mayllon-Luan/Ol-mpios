@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login.py">
+    <title>Cadastro</title>
+    <style>
+        .senha {
+            position: relative;
+        }
+        .senha input {
+            padding-right: 0px; /* Espaço para o ícone */
+        }
+        .status-icon {
+            position: absolute;
+            right: 10px;
+            top: 64%;
+            transform: translateY(-50%);
+            width: 3vh;
+            height: 3vh;
+            border-radius: 50%;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="login">
+    <div class="caixa">
+        <img src="LOGO OFC.png" alt="">
+        <h1>Cadastro</h1>
+        <form id="cadastroForm" method="POST" action="/cadastro">
+            <div class="name">
+                <input type="text" id="nome" name="nome" placeholder="Nome" required>
+            </div>
+            <div class="email">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="senha">
+                <input type="password" id="senha" name="password" placeholder="Senha" required>
+            </div>
+            <div class="senha">
+                <input type="password" id="confirmaSenha" name="confirmaSenha" placeholder="Confirme a sua senha" required>
+                <div class="status-icon" id="statusIcon"></div>
+            </div>
+            <div class="entrar">
+                <p>Já tem uma conta? <a href="login.html">Entre aqui.</a></p>
+                <input type="submit" value="Cadastrar">
+            </div>
+        </form>
+        <p id="mensagemSucesso" style="display:none; color: green;">Cadastrado com Sucesso!</p>
+    </div>
+</div>
+<script>
+    document.getElementById('confirmaSenha').addEventListener('input', function() {
+        const senha = document.getElementById('senha').value;
+        const confirmaSenha = this.value;
+        const statusIcon = document.getElementById('statusIcon');
+        if (senha === confirmaSenha && confirmaSenha !== '') {
+            statusIcon.style.backgroundColor = 'green';
+        } else {
+            statusIcon.style.backgroundColor = 'red';
+        }
+    });
+
+    document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        fetch(this.action, {
+            method: this.method,
+            body: formData
+        }).then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  document.getElementById('mensagemSucesso').style.display = 'block';
+                  setTimeout(() => {
+                      window.location.href = 'login.html';
+                  }, 2000);  // 2 segundos
+              } else {
+                  alert('Erro ao cadastrar: ' + data.message);
+              }
+          });
+    });
+</script>
+</body>
+</html>

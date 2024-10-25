@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Entrar</title>
+</head>
+
+<body>
+<div id="login">
+    <div class="caixa">
+        <img src="LIVRO.png" alt="">
+        <h1>Entrar</h1>
+        <form id="loginForm" method="POST" action="/login.html">
+            <div class="email">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="senha">
+                <input type="password" name="password" placeholder="Senha" required>
+            </div>
+            <div class="entrar">
+                <p>Ainda não tem uma conta? <a href="cadastro.html">Crie uma.</a></p>
+                <input type="submit" value="Entrar">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.querySelector('#loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+        const formData = new FormData(this);
+
+        fetch(this.action, {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  window.location.href = '/index.html'; // Redireciona para a página ms.html em caso de sucesso
+              } else {
+                  alert('Falha no login. Verifique suas credenciais.');
+              }
+          });
+    });
+</script>
+</body>
+</html>

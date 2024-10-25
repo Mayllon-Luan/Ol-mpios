@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(180deg, #1a1a1a, #333333, #4d4d4d, #666666);
+    color: #fff; /* Cor do texto para contraste */
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+
+
+
+a {
+    text-decoration: none;
+    color:aquamarine;
+}
+
+#login {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.name input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1c2e;
+    color: #b6b6b6;
+    margin-bottom: 15px;
+}
+
+.email input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1c2e;
+    color: #b6b6b6;
+}
+
+.senha input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #1e1c2e;
+    color: #b6b6b6;
+    margin-top: 15px;
+}
+
+.entrar input {
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(134, 243, 134);
+    color: #141414
+}
+
+input::placeholder {
+    color: #b6b6b6;
+}
+
+h1 {
+    color: #fafafa;
+}
+
+.caixa {
+    margin-top: 65px;
+}
+
+.caixa img {
+    width: 115px;
+    
+}
+
+input:focus {
+    outline: none;
+}

@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #444; /* Fundo cinza escuro */
+    color: #fff;
+}
+
+nav {
+    background-color: #222; /* Preto profundo */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra no menu */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    font-size: 1.1em;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 2px red; /* Brilho vermelho ao redor */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+nav ul li a:hover::before {
+    opacity: 1;
+}
+
+.banner {
+    background-color: #ff0000; /* Vermelho */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Sombra no banner */
+}
+
+.banner h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.courses, .lessons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.course-card, .lesson-card {
+    background-color: #555;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    height: 320px; /* Ajustei a altura das caixinhas */
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra nas caixinhas */
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-card:hover, .lesson-card:hover {
+    transform: translateY(-5px); /* Elevação ao passar o mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.course-card h3, .lesson-card h3 {
+    margin: 0 0 10px 0;
+    color: #ffffff;
+}
+
+/* Configuração para imagens nas caixinhas */
+.course-img, .lesson-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Margem de 10px embaixo da imagem */
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.logo-img {
+    width: 60px;
+    height: 60px; /* Define uma altura fixa igual à largura para criar um círculo */
+    border-radius: 50%; /* Transforma a imagem em um círculo */
+    object-fit: cover; /* Garante que a imagem se ajuste ao espaço circular sem distorção */
+    margin-right: 10px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.banner {
+    background-image: url(Banner.png); /* Substitua 'sua-imagem.jpg' pelo nome do arquivo da imagem */
+    background-size: cover; /* Faz com que a imagem cubra todo o banner */
+    background-position: center; /* Centraliza a imagem */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Sombra no banner */
+    height: 100px;
+}
