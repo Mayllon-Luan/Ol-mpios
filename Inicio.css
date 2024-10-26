@@ -70,19 +70,36 @@ nav ul li a:hover::before {
     color: #000000;
 }
 
-.courses, .lessons {
+.section h4 {
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 30px;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8), 
+                 0 0 16px rgba(255, 0, 0, 0.6), 
+                 0 0 24px rgba(255, 0, 0, 0.4);
+}
+
+
+.courses {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
 }
 
+.lessons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+}
 .course-card, .lesson-card {
     background-color: #555;
     border-radius: 8px;
     padding: 20px;
-    width: 250px;
-    height: 320px; /* Ajustei a altura das caixinhas */
+    width: 320px;
+    height: 630px; /* Ajustei a altura das caixinhas */
     color: #fff;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra nas caixinhas */
     transition: transform 0.3s, box-shadow 0.3s;
@@ -102,13 +119,19 @@ nav ul li a:hover::before {
 }
 
 /* Configuração para imagens nas caixinhas */
-.course-img, .lesson-img {
+.course-img {
     width: 100%;
     height: auto;
     border-radius: 5px;
     margin-bottom: 10px; /* Margem de 10px embaixo da imagem */
 }
 
+.lesson-img{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Margem de 10px embaixo da imagem */
+}
 footer {
     background-color: #222;
     color: #fff;
@@ -142,4 +165,37 @@ footer {
     text-align: center;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Sombra no banner */
     height: 100px;
+}
+.iframe-container {
+    position: absolute;
+    
+}
+
+.course-card1{
+
+    background-color: #555;
+    border-radius: 8px;
+    padding: 25px;
+    width: 320px;
+    height: 360px; /* Ajustei a altura das caixinhas */
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra nas caixinhas */
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5px;
+
+}
+
+.course-img1 {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Margem de 10px embaixo da imagem */
+}
+
+.course-card1 h3, .lesson-card1 h3 {
+    margin-top: 1px;
+    color: #ffffff;
 }
