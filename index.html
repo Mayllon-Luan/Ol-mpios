@@ -15,66 +15,95 @@
             <h2>Olímpios</h2>
         </div>
         <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Cursos</a></li>
-            <li><a href="#">Aulas</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><a onclick="showIframe('iframe1')" href="#">Início</a></li>
+            <li><a onclick="showIframe('iframe2')" href="#">Cursos</a></li>
+            <li><a onclick="showIframe('iframe3')" href="#">Comunidade</a></li>
+            <li><a onclick="showIframe('iframe4')" href="#">Contato</a></li>
         </ul>
     </nav>
 
-    <!-- Banner -->
-    <div class="banner">
-       
+    <!-- Conteúdo das Seções -->
+    <div id="iframe1">
+        <!-- Banner -->
+        <div class="banner"></div>
+
+        <!-- Seção de Cursos -->
+        <section class="section">
+            <div class="courses">
+                <div class="course-card">
+                    <h3>Módulo 1</h3>
+                    <a onclick="showIframe('iframe5')" href="#"><img src="CAPA.jpg" alt="Curso de Matemática" class="course-img"></a>
+                </div>
+                <div class="course-card">
+                    <h3>Módulo 2</h3>
+                    <a onclick="showIframe('iframe5')" href="#"><img src="CAPA.jpg" alt="Curso de Subtração" class="course-img"></a>
+                </div>
+                <div class="course-card">
+                    <h3>Módulo 3</h3>
+                    <a onclick="showIframe('iframe5')" href="#"><img src="CAPA.jpg" alt="Curso de Potência" class="course-img"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Aulas -->
+        
+
+        <!-- Rodapé -->
+        <footer>
+            <p>&copy; 2024 Plataforma - Todos os direitos reservados.</p>
+        </footer>
     </div>
 
-    <!-- Seção de Cursos -->
-    <section class="section">
-        <h2>Recentes</h2>
-        <div class="courses">
-            <div class="course-card">
-                <h3>Curso de Matemática</h3>
-                <img src="PG.png" alt="Curso de Matemática" class="course-img">
-                
-            </div>
-            <div class="course-card">
-                <h3>Curso de Matemática</h3>
-                <img src="G.jpg" alt="Curso de Subtração" class="course-img">
-                
-            </div>
-            <div class="course-card">
-                <h3>Curso de Matemática</h3>
-                <img src="PG.png" alt="Curso de Potência" class="course-img">
-                
-            </div>
-        </div>
+    <div id="iframe2" style="display: none;">
+        <section class="section">
+            <h4>Cursos Disponíveis</h4>
+            
+                <div class="courses">
+                    <div class="course-card1">
+                        <h3>Matemática</h3>
+                        <a onclick="showIframe('iframe5')" href="#"><img src="PG.png" alt="Curso de Matemática" class="course-img1"></a>
+                    </div>
+                    <div class="course-card1">
+                        <h3>Redação</h3>
+                        <a onclick="showIframe('iframe5')" href="#"><img src="FG.png" alt="Curso de Subtração" class="course-img1"></a>
+                    </div>
+                </div>
+        </section>
+    </div>
+
+    <div id="iframe3" style="display: none;">
+        <section class="section">
+        <h4>Comunidade em Breve</h4>
     </section>
+    </div>
 
-    <!-- Seção de Aulas -->
-    <section class="section">
-        <h2>Aulas Disponíveis</h2>
-        <div class="lessons">
-            <div class="lesson-card">
-                <h3>Aula 1: Introdução à Redação</h3>
-                <img src="FG.png" alt="Introdução à Redação" class="lesson-img">
-                
-            </div>
-            <div class="lesson-card">
-                <h3>Aula 2: Estruturas de Redação</h3>
-                <img src="FG.png" alt="Estruturas de Redação" class="lesson-img">
-                
-            </div>
-            <div class="lesson-card">
-                <h3>Aula 3: Competências</h3>
-                <img src="FG.png" alt="Competências" class="lesson-img">
-                
-            </div>
-        </div>
+    <div id="iframe4" style="display: none;">
+        <section class="section">
+        <h4>Contato</h4>
     </section>
+    </div>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2024 Plataforma - Todos os direitos reservados.</p>
-    </footer>
+    <div id="iframe5" style="display: none;">
+        <section class="section">
+        <h4>Em Breve</h4>
+    </section>
+    </div>
 
+    <script>
+        function showIframe(iframeId) {
+            // Oculta todas as seções
+            document.getElementById('iframe1').style.display = 'none';
+            document.getElementById('iframe2').style.display = 'none';
+            document.getElementById('iframe3').style.display = 'none';
+            document.getElementById('iframe4').style.display = 'none';
+            document.getElementById('iframe5').style.display = 'none';
+
+            // Exibe a seção selecionada
+            document.getElementById(iframeId).style.display = 'block';
+        }
+
+        // Exibir o iframe inicial
+        document.getElementById('iframe1').style.display = 'block';
+    </script>
 </body>
 </html>
